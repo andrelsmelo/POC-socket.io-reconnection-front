@@ -87,20 +87,9 @@ const login = (name) => {
   socket.emit('Login', name);
 };
 
-let lastType = undefined;
-const sendKey = (type, key) => {
-  if (lastType === type) {
-    return;
-  }
-
-  lastType = type;
-  socket.emit('SendKey', { type, key });
-};
-
 export {
   GameContext,
   GameProvider,
   sendMessage,
-  sendKey,
   login,
 };
